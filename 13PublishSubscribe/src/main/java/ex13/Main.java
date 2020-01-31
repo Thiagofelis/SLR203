@@ -23,7 +23,11 @@ public class Main
     b.tell(new SubscriptionRequest("topic1"), ActorRef.noSender());
     b.tell(new SubscriptionRequest("topic2"), ActorRef.noSender());
     c.tell(new SubscriptionRequest("topic2"), ActorRef.noSender());
-
+    
+    try{
+      Thread.sleep(50);
+    }catch (Exception e) {}
+    
     publisher1.tell("hello", ActorRef.noSender());
     publisher2.tell("world", ActorRef.noSender());
 
